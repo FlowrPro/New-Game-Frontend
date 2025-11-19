@@ -1,40 +1,41 @@
-// script.js
 const canvas = document.getElementById('gameCanvas');
 const ctx = canvas.getContext('2d');
 
-let player = {
-    x: 50,
-    y: 50,
-    width: 20,
-    height: 20,
-    color: 'blue',
-    speed: 5
-};
-
-function draw() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear canvas
-    ctx.fillStyle = player.color;
-    ctx.fillRect(player.x, player.y, player.width, player.height); // Draw player
-}
-
-function update() {
-    // Update game state (e.g., player movement based on input)
-}
-
+// Set canvas dimensions (can also be done in CSS)
+canvas.width = 800;
+canvas.height = 600;
 function gameLoop() {
-    update();
-    draw();
-    requestAnimationFrame(gameLoop); // Loop continuously
+    // Update game state (e.g., player position, enemy movement)
+    // Clear the canvas
+    // Draw game elements
+
+    requestAnimationFrame(gameLoop); // Call itself for the next frame
 }
 
-// Start the game loop
-gameLoop();
-
-// Example of basic movement
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'ArrowRight') {
-        player.x += player.speed;
-    } else if (e.key === 'ArrowLeft') {
-        player.x -= player.speed;
+gameLoop(); // Start the game loop
+class Player {
+    constructor(x, y, size, color) {
+        this.x = x;
+        this.y = y;
+        this.size = size;
+        this.color = color;
     }
+
+    draw() {
+        ctx.fillStyle = this.color;
+        ctx.fillRect(this.x, this.y, this.size, this.size);
+    }
+
+    update() {
+        // Update player position based on input or game logic
+    }
+}
+
+const player = new Player(50, 50, 30, 'red');
+document.addEventListener('keydown', (event) => {
+    // Handle key presses (e.g., move player)
 });
+function checkCollision(obj1, obj2) {
+    // Logic to determine if two objects are overlapping
+    // Return true or false
+}
