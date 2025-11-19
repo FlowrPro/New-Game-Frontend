@@ -1,13 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clashdot.io</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Clashdot beta</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <canvas id="gameCanvas"></canvas>
-    <script src="script.js"></script>
+  <div id="homescreen">
+    <h1>Clashdot beta</h1>
+    <input type="text" id="username" placeholder="Enter username" />
+    <button id="playBtn">Play Game</button>
+    <div id="menu">
+      <button>Settings</button>
+      <button>Credits</button>
+      <button>Info</button>
+      <button>Changelog</button>
+    </div>
+  </div>
+
+  <canvas id="gameCanvas" width="1024" height="768"></canvas>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="game.js"></script>
 </body>
 </html>
