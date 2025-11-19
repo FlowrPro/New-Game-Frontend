@@ -2,8 +2,7 @@ let socket;
 let otherPlayers = {};
 
 export function connectToServer(player, onPlayersUpdate) {
-  socket = io("https://your-render-backend.onrender.com"); // Replace with your actual Render backend URL
-
+  socket = io("https://game-backend-9wuo.onrender.com"); 
   socket.on("connect", () => {
     console.log("Connected to server:", socket.id);
     socket.emit("join", player.name);
